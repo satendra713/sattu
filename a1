@@ -1,0 +1,32 @@
+What you’ll need
+2 CPUs or more
+2GB of free memory
+20GB of free disk space
+Internet connection
+
+#Debian Package for Ubuntu server
+
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+sudo dpkg -i minikube_latest_amd64.deb
+
+#Update package
+
+sudo apt-get update
+
+#Install docker
+
+sudo apt-get install docker.io
+
+#To install driver and give the permissions to group
+
+sudo usermod -aG docker $USER && newgrp docker
+minikube start --driver=docker
+
+#To install kubectl, we will need to install snap which is a command line utility. snap is a tool to install the containerized application.
+
+sudo snap install kubectl --classic
+kubectl get pods
+
+kubectl get pods --namespace=kube-system
+
+

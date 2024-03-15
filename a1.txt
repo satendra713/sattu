@@ -1,0 +1,8 @@
+echo "Hello world"
+echo "this is our first shell script"
+
+ls
+pwd
+cal
+
+whoami
